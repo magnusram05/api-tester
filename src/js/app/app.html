@@ -1,0 +1,70 @@
+<main>
+	
+<!-- <h1>Search Results</h1> -->
+<div id="tool-bar">
+<div id="test-button-div" style="float:left;">	
+	<i title="Run tests" class="material-icons md-48 white" data-bind="click: test">
+		play_arrow
+	</i>
+<!-- 	<input type="submit" value="" id="test-button" data-bind="click: test">		
+ --></div>
+<div style="float:right;margin-right:10px;">
+	<i title="Expand / Collapse All" class="material-icons md-48 white" data-bind="click: collapseToggle" style="right:0;">
+		<span id="collapse-icon">arrow_drop_up</span>
+	</i>
+	<!-- <input type="submit" value="" id="uncollapse-button" data-bind="click: collapseToggle" > -->
+</div>
+</div>
+<div id="searchFailure" style="margin-top: 30px;">
+	<!-- <div class="failure-bg"><h2>Failure</h2></div> -->
+	<div id="search-failure-results-rows" data-bind="foreach: failureSearchResults">
+			<i title="Bug" data-bind="attr: {id: $parent.bugID(dataType,'bug'), text: dataType}, click: $parent.toggle(dataType)" class="material-icons md-48">
+				bug_report
+			</i>
+			<div class="failure-child-rows">	
+				<div data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
+				<div  style="display: none;" data-bind="attr:{id: dataType}">
+					<div class="result-text-area"><p>Expected</p>
+						<textarea class="expected-result" data-bind="text: expected" ></textarea>
+					</div>
+					<div class="result-text-area"><p>Actual</p>
+						<textarea class="actual-result" data-bind="text: actual" ></textarea>
+					</div>	
+				</div>			
+			</div>
+	</div>
+</div>
+
+<div id="searchSuccess">	
+	<div id="search-success-results-rows" data-bind="foreach: successSearchResults">
+			<i title="Success" class="material-icons md-48" data-bind="attr:{text: dataType}, click: $parent.toggle(dataType)">
+				check_circle
+			</i>
+			<div class="success-child-rows">	
+				<div data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
+				<div  style="display: none;" data-bind="attr:{id: dataType}">
+					<div class="result-text-area"><p>Expected</p>
+						<textarea class="expected-result" data-bind="text: expected" ></textarea>
+					</div>
+					<div class="result-text-area"><p>Actual</p>
+						<textarea class="actual-result" data-bind="text: actual" ></textarea>
+					</div>		
+				</div>		
+			</div>
+	</div>
+</div>
+
+<!-- <h1>Details Results</h1>
+<div id="detailsSuccess">
+	<div class="success-bg"><h2>Success</h2></div> 
+	<div id="details-success-results-rows" data-bind="foreach: succcessDetailsResults">
+			<div data-bind="text: value" class="success-child-rows"></div>
+	</div>
+</div>
+<div id="detailsFailure">
+	<div class="failure-bg"><h2>Failure</h2></div> 
+	<div id="details-failure-results-rows" data-bind="foreach: failureDetailsResults">
+			<div data-bind="text: value" class="success-child-rows"></div>
+	</div>
+</div> -->
+<main>

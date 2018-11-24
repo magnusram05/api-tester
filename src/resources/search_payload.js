@@ -1,0 +1,30 @@
+define(function(){
+	return {
+		"data":{
+			"ClientContact":{
+				"name":"govi"
+			},
+			"ClientAccount":{
+				"spn":"12345"
+			},
+			"ClientAccount1":{
+				"spn":"12345"
+			},
+			"ClientAccount2":{
+				"spn":"12345"
+			},
+			"ClientAccount3":{
+				"spn":"12345"
+			},
+			"ClientAccount4":{
+				"spn":"12345"
+			},
+			"ClientAccount5":{
+				"spn":"12345"
+			},
+			"ClientAccount6":{
+				"spn":"12345"
+			}
+		}
+	}
+})
