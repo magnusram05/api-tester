@@ -19,7 +19,7 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs(['jquery', 'knockout','jasmine'],function($, ko){
+requirejs(['jquery', 'knockout'],function($, ko){
 	requirejs(['mockjax'],
 		function   (mockjax) {
 		    ko.components.register('apiTestSuite', {
