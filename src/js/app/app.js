@@ -1,6 +1,3 @@
-//Load search payload JSON with structure - 'dataType':'payload' into a searchPayload variable 
-//Load details payload JSON with structure - 'dataType':'payload' into a detailsPayload variable
-//Load Endpoint urls JSON into endpointUrls variable
 define(["knockout", "jquery","/src/resources/search_payload.js",
 	"/src/resources/details_payload.js",
 	"/src/resources/endpoint_urls.js",
@@ -30,17 +27,11 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 												"dataType":name, "actual":""};
 						var isFound = obj.expected[response.dataType] || false;							
 						if(!isFound){
-							/*response["expected"]=JSON.stringify(obj.expected[name]);
-							response["dataType"]=name;*/
 							obj.failureSearchResults.push(enReponse);
 						} else if(_.isEqual(response.data, obj.expected[name])){
-							/*response["expected"]=JSON.stringify(obj.expected[name]);
-							response["dataType"]=name;*/
 							_.assignIn(enReponse, {'actual':JSON.stringify(response.data)});
 							obj.successSearchResults.push(enReponse);
 						} else {
-							/*response["expected"]=JSON.stringify(obj.expected[name]);
-							response["dataType"]=name;*/
 							_.assignIn(enReponse, {'actual':JSON.stringify(response.data)});
 							obj.failureSearchResults.push(enReponse);
 						}
@@ -48,29 +39,7 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 					error: function(error){
 						obj.successSearchResults.push(enReponse);
 					}
-			})
-			/*.then(function(){
-					$.ajax({
-						url: "http://localhost:3000/test",	
-						dataType: "text",														
-						success: function(response) {
-					        obj.testSearchResults[name] = response.responseText;  
-					        if(response !== obj.refSearchResults[name]){
-					        	console.log(name +" :Failed");
-					        } else {
-					        	console.log(name +" :Passed");
-					        }
-						},
-						error: function(error){	
-						    obj.testSearchResults[name] = error.responseText;	
-						    if(response !== obj.refSearchResults[name]){
-					        	console.log(name +" :Failed");
-					        } else {
-					        	console.log(name +" :Passed");
-					        }			
-						}
-				})
-			})*/
+			})			
 		})
 		$('#collapse-icon').css('display','block');
 		obj.toggleGlobalCollapse(false);
@@ -117,27 +86,5 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 	}
 	return ViewModel;
 })
-//Init refSearchResults object - {}
-//Init refDetailsResults object - {}
-//Init testSearchResults object - {}
-//Init testDetailsResults object - {}
-
-//Attach click event handler to #test button
-	//Get reference endpoint from #refEndPointOption
-		//Loop through searchPayload
-			//call endpoint with payload
-			//insert success response on to refSearchResults with dataType as key
-			//insert failure response on to refSearchResults with dataType as key
-	//Get endpoint to be tested from #endpointToBeTestedOption
-		//Loop through detailsPayload
-			//call endpoint with payload
-			//insert success response in to testSearchResults with dataType as key
-				//Create a div row as child to a div with #failedSearch or #successfulSearch
-					//Add child div with expected result
-					//Add child div with actual result
-			//insert failure response in to testSearchResults with dataType as key
-				//Create a div row as child to a div with #failedSearch or #successfulSearch
-					//Add child div with expected result
-					//Add child div with actual result
 
 
