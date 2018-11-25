@@ -26,24 +26,26 @@ h1, h2,p {
 i {
 	user-select: none;
 }
-main{
-	height: 100%; 
-}
 #tool-bar{
-	border-top: 1px solid white;
+	border-top: 1px solid lightgray;
 	background: #283646;
 	position: relative;
 	height: 60px
 }
 #test-button-div{
 	margin: 2px;
+	display: inline-block;
 }
 .test-button{
 	padding: 10px;
 	margin: 2px;
 }
 .material-icons.green { color: green; }
+.material-icons.green-border { color: green; border: 1px solid green;}
+.material-icons.red-border { color: red; border: 1px solid red;}
 .material-icons.red { color: red; }
+.material-icons.gray { color: gray; }
+.material-icons.gray { color: black; }
 .material-icons.white { color: white; }
 .material-icons.md-48 { font-size: 48px; margin: 5px; position: absolute;}
 .material-icons.md-36 { font-size: 36px; margin: 5px; position: absolute;}
@@ -65,7 +67,7 @@ main{
 .success-child-rows,.failure-child-rows{
 	padding: 10px;
 	border-bottom: 2px solid green;
-	margin: 20px;
+	/*margin: 20px;*/
 	margin-left: 50px;
 }
 .failure-child-rows{
@@ -99,17 +101,23 @@ input[type="submit"]:hover{
     font-weight: bold;
 }
 
-.test-result-div-parent{
+.test-result-div-parent, .test-result-div-parent-left{
 	background-color: white;
 	border: 1px solid lightgray;
     width: 150px;
 	max-width: 150px;
 	border-radius: 5px;
 	height: 50px;
-	margin: 5px;
+	margin: 5px;	
 	display: inline-block;
 	float: right;
 	position: relative;
+}
+.test-result-div-parent-left{
+	float: left;
+	width: 450px;
+	max-width: 450px;
+	margin-left: 5px;
 }
 #result-label-span{
 	background-color: lightgray;
@@ -135,5 +143,5 @@ input[type="submit"]:hover{
 	color: #ff1a00;
 }
 .result-details{
-	margin-top: 50px;
+	margin-top: 30px;
 }

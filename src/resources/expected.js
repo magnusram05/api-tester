@@ -1,36 +1,32 @@
 define([],function(){
 	return {
-			  	"ClientAccount":{
+			  	"Test0":{
 			  		status: "success",
-					value: "ClientAccount success"
+					value: "Test0 success"
 			    },
-			    "ClientContact":{
-			  		status: "success",
-					value: "ClientContact success"
-			    },
-				"ClientAccount1":{
+				"Test1":{
 					status: "success",
-					value: "ClientAccount1 success"
+					value: "Test1 success"
 				},
-				"ClientAccount2":{
+				"Test2":{
 					status: "success",
-					value: "ClientAccount2 success"
+					value: "Test2 success"
 				},
-				"ClientAccount3":{
+				"Test3":{
 					status: "success",
-					value: "ClientAccount3 success"
+					value: "Test3 success"
 				},
-				"ClientAccount4":{
+				"Test4":{
 					status: "success",
-					value: "ClientAccount4 success"
+					value: "Test4 success"
 				},
-				"ClientAccount5":{
+				"Test5":{
 					status: "success",
-					value: "ClientAccount5 success"
+					value: "Test5 success"
 				},
-				"ClientAccount6":{
+				"Test6":{
 					status: "success",
-					value: "ClientAccount6 success"
+					value: "Test6 success"
 				}			    
 		   }
 })

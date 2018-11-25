@@ -6,34 +6,45 @@
 				play_arrow
 			</i>
 		</div>
-		<div style="float:right;margin-right:10px;">
-			<i title="Expand / Collapse All" class="material-icons md-48 white" data-bind="click: collapseToggle" style="right:0;">
-				<span id="collapse-icon">arrow_drop_up</span>
-			</i>
+		<div class="test-result-div-parent-left">
+			<div id="result-label-span">
+				<!-- <i title="Bug" class="material-icons md-36 green">
+						check_circle
+				</i> -->
+				<i title="Run tests" class="material-icons md-36 green" data-bind="click: test">
+					play_arrow
+				</i>
+			</div>				
+			<div class="result-number" data-bind="text: endpoint">
+		    </div>     
+		</div>	
+		<div class="test-result-div-parent">
+			<div id="result-label-span">
+				<i title="Bug" class="material-icons md-36 green">
+						check_circle
+				</i>
+			</div>				
+			<div class="result-number" data-bind="text: successSearchResults().length">
+		    </div>     
 		</div>
-	</div>		
-	<div class="test-result-div-parent">
-		<div id="result-label-span">
-			<i title="Bug" class="material-icons md-36 green">
-					check_circle
-			</i>
-		</div>				
-		<div class="result-number" data-bind="text: successSearchResults().length">
-	    </div>     
-	</div>
-	<div class="test-result-div-parent">
-		<div id="result-label-span">
-			<i title="Bug" class="material-icons md-36 red">
-					bug_report
-			</i>
-	    </div>
-		<div class="result-number" data-bind="text: failureSearchResults().length">
-	    </div> 
+		<div class="test-result-div-parent">
+			<div id="result-label-span">
+				<i title="Bug" class="material-icons md-36 red">
+						bug_report
+				</i>
+		    </div>
+			<div class="result-number" data-bind="text: failureSearchResults().length">
+		    </div> 
+		</div>			
 	</div>	
+	<i id="collapse-icon" title="Expand / Collapse All" class="material-icons md-36 black" data-bind="click: collapseToggle" style="right:0;float: right;display: none;">
+				<span >arrow_drop_up</span>
+			</i>
 	<div class="result-details">
+			
 		<div id="searchFailure">
 			<div id="search-failure-results-rows" data-bind="foreach: failureSearchResults">
-					<i title="Bug" data-bind="attr: {id: $parent.bugID(dataType,'bug'), text: dataType}, click: $parent.toggle(dataType)" class="material-icons md-36 red">
+					<i title="Bug" data-bind="attr: {id: $parent.bugID(dataType,'bug'), text: dataType}, click: $parent.toggle(dataType)" class="material-icons md-36 red-border">
 						bug_report
 					</i>
 					<div class="failure-child-rows">	
@@ -51,7 +62,7 @@
 		</div>
 		<div id="searchSuccess">	
 			<div id="search-success-results-rows" data-bind="foreach: successSearchResults">
-					<i title="Success" class="material-icons md-36 green" data-bind="attr:{text: dataType}, click: $parent.toggle(dataType)">
+					<i title="Success" class="material-icons md-36 green-border" data-bind="attr:{text: dataType}, click: $parent.toggle(dataType)">
 						check_circle
 					</i>
 					<div class="success-child-rows">	

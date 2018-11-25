@@ -8,7 +8,7 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         app: '../app',
-        resources: 'src/resources'
+        resources: '/src/resources'
     },
 
     shim: {
@@ -25,25 +25,7 @@ requirejs(['jquery', 'knockout'],function($, ko){
 		    ko.components.register('apiTestSuite', {
 		        viewModel: { require: 'app/app' },
 		        template: { require: 'text!app/app.html' }
-		    });
-		    $.mockjax({
-				  url: "http://localhost:3000/reference",
-				  contentType: "application/json",
-				  responseText: {
-				  			dataType: "ClientAccount",
-				  			data: {status: "success",
-					    	value: "ClientAccount success"}
-					  		
-					    }					    				    				   
-			});
-			$.mockjax({
-				  url: "http://localhost:3000/test",
-				  contentType: "application/json",
-				  responseText: {
-				    status: "success",
-				    value: "Are you a mock turtle?"
-				  }
-			});
+		    });		    
 		    ko.applyBindings();
 		});
 });

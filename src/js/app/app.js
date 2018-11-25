@@ -5,8 +5,9 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 	"/src/resources/details_payload.js",
 	"/src/resources/endpoint_urls.js",
 	"/src/resources/expected.js",
+	"/src/js/app/config.js",
 	"lodash"], 
-	function(ko, $,searchPayload,detailsPayload,endpointUrls,expected,lodash){
+	function(ko, $,searchPayload,detailsPayload,endpointUrls,expected,config,lodash){
 	function ViewModel(){
 		this.searchPayload = ko.observable(searchPayload.data);
 		this.detailsPayload = ko.observable(detailsPayload.data);
@@ -16,16 +17,17 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 		this.succcessDetailsResults = ko.observableArray();
 		this.failureDetailsResults = ko.observableArray();	
 		this.expected = expected;	
+		this.endpoint = config.endpoint;
 	}
 	ViewModel.prototype.test = function(){
 		let obj = this;
-		obj.reset();
+		obj.reset();		
 		$.each(obj.searchPayload(), function(name, value){			
 			$.ajax({
-						url: "http://localhost:3000/reference",
+						url: obj.endpoint,
 						success: function(response){	
 					    let enReponse = {"expected": JSON.stringify(obj.expected[name]),
-												"dataType":name};
+												"dataType":name, "actual":""};
 						var isFound = obj.expected[response.dataType] || false;							
 						if(!isFound){
 							/*response["expected"]=JSON.stringify(obj.expected[name]);
@@ -70,6 +72,7 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 				})
 			})*/
 		})
+		$('#collapse-icon').css('display','block');
 		obj.toggleGlobalCollapse(false);
 	}
 	ViewModel.prototype.reset = function(){
