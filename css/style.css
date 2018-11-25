@@ -1,12 +1,11 @@
 html{
 	min-height: 100%;
 	font-family: 'Noto Sans SC', sans-serif;
+	overflow-y: scroll;
 }
 body{
 	margin: 0px;
 	padding: 0px;
-	/*background: #03a9f4*/
-	/*background:#8fd0ff;*/
 }
 header{
 	margin: 0px;
@@ -28,7 +27,7 @@ i {
 	user-select: none;
 }
 main{
-	height: 100vh;    
+	height: 100%; 
 }
 #tool-bar{
 	border-top: 1px solid white;
@@ -47,6 +46,7 @@ main{
 .material-icons.red { color: red; }
 .material-icons.white { color: white; }
 .material-icons.md-48 { font-size: 48px; margin: 5px; position: absolute;}
+.material-icons.md-36 { font-size: 36px; margin: 5px; position: absolute;}
 .material-icons:hover{
 	cursor: pointer;
 }
@@ -60,6 +60,7 @@ main{
 }
 .test-header{
 	font-weight: bold;
+	color: #28343b;
 }
 .success-child-rows,.failure-child-rows{
 	padding: 10px;
@@ -96,4 +97,43 @@ input[type="submit"]:hover{
     color: white;
     border-color: blue;
     font-weight: bold;
+}
+
+.test-result-div-parent{
+	background-color: white;
+	border: 1px solid lightgray;
+    width: 150px;
+	max-width: 150px;
+	border-radius: 5px;
+	height: 50px;
+	margin: 5px;
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+#result-label-span{
+	background-color: lightgray;
+	color: black;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+}
+.result-number
+{
+    font-size: 24px;
+    color: #28343b;
+    position: absolute;
+    display: inline-block;
+    left: 90px;
+    top: 5px;
+    font-weight: bold;
+}
+.result-number-green{
+	color: #299a0b;
+}
+.result-number-red{
+	color: #ff1a00;
+}
+.result-details{
+	margin-top: 50px;
 }

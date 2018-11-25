@@ -77,6 +77,10 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 		this.failureSearchResults.removeAll();
 		this.succcessDetailsResults.removeAll();
 		this.failureDetailsResults.removeAll();
+		this.successSearchResults.length = 0;
+		this.failureSearchResults.length = 0;
+		this.succcessDetailsResults.length = 0;
+		this.failureDetailsResults.length = 0;
 	}
 	ViewModel.prototype.toggle = function(dataType){
 		$('#'+dataType).toggle();	
