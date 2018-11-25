@@ -5,7 +5,8 @@ html{
 body{
 	margin: 0px;
 	padding: 0px;
-	background: #03a9f4;
+	/*background: #03a9f4*/
+	/*background:#8fd0ff;*/
 }
 header{
 	margin: 0px;
@@ -22,6 +23,9 @@ header{
 h1, h2,p {
 	margin: 0px;
 	padding: 0px;
+}
+i {
+	user-select: none;
 }
 main{
 	height: 100vh;    
@@ -53,6 +57,9 @@ main{
 .failure-bg {
 	margin: 5px;
 	background-image: linear-gradient(45deg, #f85032 0%,#f6290c 0%,#e73827 0%,#f6290c 1%,#f16f5c 100%,#f02f17 100%); /* Chrome10-25,Safari5.1-6 */
+}
+.test-header{
+	font-weight: bold;
 }
 .success-child-rows,.failure-child-rows{
 	padding: 10px;

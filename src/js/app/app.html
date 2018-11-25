@@ -18,11 +18,11 @@
 <div id="searchFailure" style="margin-top: 30px;">
 	<!-- <div class="failure-bg"><h2>Failure</h2></div> -->
 	<div id="search-failure-results-rows" data-bind="foreach: failureSearchResults">
-			<i title="Bug" data-bind="attr: {id: $parent.bugID(dataType,'bug'), text: dataType}, click: $parent.toggle(dataType)" class="material-icons md-48">
+			<i title="Bug" data-bind="attr: {id: $parent.bugID(dataType,'bug'), text: dataType}, click: $parent.toggle(dataType)" class="material-icons md-48 red">
 				bug_report
 			</i>
 			<div class="failure-child-rows">	
-				<div data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
+				<div class="test-header" data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
 				<div  style="display: none;" data-bind="attr:{id: dataType}">
 					<div class="result-text-area"><p>Expected</p>
 						<textarea class="expected-result" data-bind="text: expected" ></textarea>
@@ -37,11 +37,11 @@
 
 <div id="searchSuccess">	
 	<div id="search-success-results-rows" data-bind="foreach: successSearchResults">
-			<i title="Success" class="material-icons md-48" data-bind="attr:{text: dataType}, click: $parent.toggle(dataType)">
+			<i title="Success" class="material-icons md-48 green" data-bind="attr:{text: dataType}, click: $parent.toggle(dataType)">
 				check_circle
 			</i>
 			<div class="success-child-rows">	
-				<div data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
+				<div class="test-header" data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
 				<div  style="display: none;" data-bind="attr:{id: dataType}">
 					<div class="result-text-area"><p>Expected</p>
 						<textarea class="expected-result" data-bind="text: expected" ></textarea>
