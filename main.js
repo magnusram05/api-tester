@@ -8,7 +8,7 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         app: '../app',
-        resources: '/src/resources'
+        resources: '../../resources'
     },
 
     shim: {

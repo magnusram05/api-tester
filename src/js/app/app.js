@@ -17,13 +17,13 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 		this.endpoint = config.endpoint;
 	}
 	ViewModel.prototype.test = function(){
-		let obj = this;
+		var obj = this;
 		obj.reset();		
 		$.each(obj.searchPayload(), function(name, value){			
 			$.ajax({
 						url: obj.endpoint,
 						success: function(response){	
-					    let enReponse = {"expected": JSON.stringify(obj.expected[name]),
+					    var enReponse = {"expected": JSON.stringify(obj.expected[name]),
 												"dataType":name, "actual":""};
 						var isFound = obj.expected[response.dataType] || false;							
 						if(!isFound){
