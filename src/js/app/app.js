@@ -22,9 +22,11 @@ define(["knockout", "jquery","/src/resources/search_payload.js",
 		$.each(obj.searchPayload(), function(name, value){			
 			$.ajax({
 						url: obj.endpoint,
-						success: function(response){	
+						start_time: new Date().getTime(),
+						complete: function(response){	
+						var elapsedTime = new Date().getTime() - this.start_time;
 					    var enReponse = {"expected": JSON.stringify(obj.expected[name]),
-												"dataType":name, "actual":""};
+												"dataType":name, "actual":"",elapsedTime:elapsedTime};
 						var isFound = obj.expected[response.dataType] || false;							
 						if(!isFound){
 							obj.failureSearchResults.push(enReponse);

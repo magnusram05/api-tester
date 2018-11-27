@@ -49,6 +49,7 @@
 					</i>
 					<div class="failure-child-rows">	
 						<div class="test-header" data-bind="text: dataType, click: $parent.toggle(dataType)"></div>
+						<span class="elapsed-time" data-bind="text: '['+elapsedTime+' ms]'"></span>
 						<div  style="display: none;" data-bind="attr:{id: dataType}">
 							<div class="result-text-area"><p>Expected</p>
 								<textarea class="expected-result" data-bind="text: expected" ></textarea>

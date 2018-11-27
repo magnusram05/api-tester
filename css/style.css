@@ -73,6 +73,7 @@ main{
 .test-header{
 	font-weight: bold;
 	color: #28343b;
+	display: inline-block;
 }
 .success-child-rows,.failure-child-rows{
 	padding: 10px;
@@ -91,6 +92,9 @@ main{
 .result-text-area{
 	display: inline-block;
 	margin: 20px;
+}
+.elapsed-time{
+	font-size: 12px;	
 }
 input[type="submit"]{	
     background: transparent;
